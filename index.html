@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Coffe</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel="icon" type="image/x-icon" href="img/logo bc.png">
+  <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+  <script src="https://kit.fontawesome.com/79fa34a98c.js"crossorigin="anonymous"></script>
+  <script src='main.js'></script>
+</head>
+<body>
+  
+</body>
+</html>
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href= link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap"rel="stylesheet"/>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+    <!--Feather Icons-->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!--My Style-->
+  </head>
+
+  <style>
+    :root {
+      --primary: #2c488f;
+      --bg: rgb(2, 11, 94);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      outline: none;
+      border: none;
+      text-decoration: none;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Vollkorn', serif;
+      background-color: var(--bg);
+      color: #fff;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 4%;
+      background-color: rgba(161, 172, 202, 0.8);
+      border-bottom: 1px solid var(--primary);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 9999;
+    }
+
+    .navbar .navbar-logo {
+      font-size: 30px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .navbar .navbar-logo span {
+      color: var(--primary);
+    }
+
+    .navbar .navbar-nav a {
+      color: #fff;
+      display: inline-block;
+      font-size: 25px;
+      margin: 0 15px;
+    }
+
+    .navbar .navbar-nav a:hover {
+      color: var(--primary);
+    }
+
+    .navbar .navbar-nav a::after {
+      content:'';
+      display: block;
+      padding-bottom: 8px;
+      border-bottom: 3px solid var(--primary);
+      transform: scaleX(0);
+    }
+
+    .navbar .navbar-nav a:hover::after {
+      transform: scaleX(0.5);
+      transition: 0.2s linear;
+    }
+    .navbar .navbar-extra a {
+      color: #fff;
+      margin: 0 0.5px;
+    }
+
+    .navbar .navbar-extra a:hover {
+      color: var(--primary);
+    }
+
+  
+
+    /* Navbar Search form */
+    .navbar .search-form {
+      position: absolute;
+      top: 100%;
+      right: 7%;
+      background-color: #fff;
+      width: 500px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: 0.3s;
+    }
+
+    .navbar .search-form.active {
+      transform: scaleY(1);
+    }
+
+    .navbar .search-form input {
+      height: 90%;
+      width: 100%;
+      font-size: 16px;
+      color: var(--bg);
+      padding: 15px;
+    }
+
+    .navbar .search-form label {
+      cursor: pointer;
+      font-size: 25px;
+      margin-right: 15px;
+      color: var(--bg);
+    }
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background-image: url("img/pemandangan 4.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      -webkit-mask-image: linear-gradient(rgba(174, 188, 227, 0.534) 1%, rgba(2,98,233));
+      mask-image: linear-gradient(rgba(174, 188, 227, 0.534) 1%, rgba(83,98,233));
+    }
+
+    /* .hero::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 15%;
+      background: linear-gradient(0deg, rgb(83, 98, 233) 2%, rgba(174, 188, 227,) 20%);
+    } */
+
+    .hero .content {
+      padding: 2px 7%;
+      /* max-width: 50rem; */
+      width: 100%;
+      text-align: center;
+      position: fixed;
+      top: 100px;
+    }
+
+    .hero .content h1 {
+      font-family: 'Vollkorn', serif;
+      font-size: 90px;
+      color:#fff;
+      text-shadow: 1 px 1px 3px rgba(174, 188, 227, 0.5);
+      line height: 1.1;
+    }
+    .hero .content h1 span {
+      color: #0732a9;
+    }
+
+
+    .hero .content p {
+      font-family: 'EB Garamond', serif;
+      font-size: 30px;
+      margin-top: 0.5px;
+      line-height: 1.4;
+      font-weight: 100;
+      text-shadow: 1 px 1px 3px rgba(174, 188, 227, 0.5);
+      mix-blend-mode: difference;
+    }
+
+    .hero .content p span  {
+      color:coral;
+    }
+
+    .hero .content .cta {
+      margin-top: 1px;
+      display: inline-block;
+      padding: 1px 3px;
+      font-size: 100px;
+      color:#fff
+      background-color: var(--primary);
+      border-radius: 0.5px;
+      box-shadow: 1px 1px 3px rgba(174, 188, 227, 0.5);
+    }
+
+    /* About Section */
+    .about, 
+    .menu, .gallery, .contact {
+      padding: 65px 7% 30px;
+    }
+
+    .about h2, 
+    .menu h2, .gallery h2, .contact h2{
+      text-align: center;
+      font-size: 50px;
+      margin-bottom: 50px;
+    }
+
+    .about h2 span,
+    .menu h2 span, .gallery h2 span, .contact h2 span {
+      color: #c8dcea;
+    }
+
+
+    .about .row {
+      display: flex;
+    }
+
+    .about .row .about-img {
+      flex: 1 1 600px;
+    }
+    
+    .about .row .about-img img {
+      width: 600px;
+  
+    }
+
+    .about .row .content {
+      flex: 1 1 600px;
+      padding: 0 ;
+    }
+
+    .about .row .content h3 {
+      font-size: 55px;
+      margin-bottom: 60px;
+    }
+
+    .about .row .content p {
+      margin-bottom: 19px;
+      font-size: 55px;
+      font-weight: 200px;
+      line-height: 80px;
+    }
+/* Menu Section */
+.menu p, .gallery p, .contact p {
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 15px;
+  font-weight: 200px;
+  line-height: 40px;
+}
+.menu .row p {
+  font-size: 20px;
+}
+.menu .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  justify-content: center;
+}
+
+.menu .row .menu-card {
+  text-align: center;
+}
+
+.menu .row .menu-card img {
+  border-radius: 30%;
+  width: 80%;
+}
+
+.menu .row .menu-card .menu-card-tittle {
+  margin: 20px auto 5px;
+}
+
+/* Gallery Section */
+.gallery .row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 0.4fr));
+  gap: 9px;
+  margin-top: 5px;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  z-index: 9999;
+}
+
+
+
+/* Contact Section */
+.contact .row {
+  display: flex;
+  margin-top: 30px;
+  background-color: #7f9de9;
+}
+
+.contact .row .map {
+  flex: 1 1 900px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.contact .row form{
+  flex: 1 1 700px;
+  padding: 20px 10px;
+  text-align: center;
+}
+
+.contact .row form .input-group {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  background-color: var(--primary);
+  border: 1px solid #eee;
+  padding-left: 10px;
+}
+
+.contact .row form .input-group input {
+  width: 100%;
+  padding: 30px;
+  font-size: 17px;
+  background: none;
+  color:#fff;
+}
+
+.contact .row form .btn{
+  margin-top: 30px;
+  display: inline-block;
+  padding: 20px 20px;
+  font-size: 20px;
+  color:#fff;
+  background-color: var(--primary);
+  cursor: pointer;
+}
+
+
+/*footer */
+footer {
+  background-color: var(--primary);
+  text-align: center;
+  padding: 1px 13px;
+  margin-top: 3px;
+}
+
+footer .social {
+  padding: 20px 0;
+}
+
+footer .social a {
+  color: #fff;
+  margin: 15px;
+}
+
+footer .social a:hover, footer .Links a:hover {
+  color: var(--bg);
+}
+
+footer .credit {
+  margin-bottom: 1px;
+  font-size: 8px;
+}
+
+
+footer .credit a {
+  color:#fff;
+  font-weight: 700px;
+}
+
+    .navbar .search-form {
+      width: 50%;
+      right: 2px; 
+    }
+    .about .row {
+      flex-wrap:wrap;
+    }
+
+
+    .about .row .content {
+      padding: 0;
+    }
+
+    .about .row .content h3{
+      margin-top: 100px;
+      font-size: 100px;
+    }
+
+    .about .row .content p {
+      font-size: 50px;
+      
+    }
+
+    .menu p {
+      font-size: 12px;
+    }
+    
+   
+  </style>
+  <body>
+    <!--Navbar start-->
+    <nav class="navbar">
+      <a href="#" class="navbar-logo">Barokah<span>Coffe</span></a>
+
+      <div class="navbar-nav">
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="navbar-extra">
+        <a href="#" id="search-button"><i data-feather="search"></i></a>
+      </div>
+
+      <!-- Search Form Start-->
+      <div class="search-form">
+        <input type="search" id="search-box" placeholder="search here...">
+        <label for="search-box"><i class="fa-solid fa-magnifying-glass fa-2xs"></i></label>
+      </div>
+      <!-- Search Form end-->
+    </nav>
+    <!--Navbar end-->
+
+    <!-- Hero Section Start-->
+    <section class="hero" id="home">
+      <main class="content">
+        <h1>
+          <span> Santai Sore</span> Menikmati Pemandangan <span> DiBarokah Coffe </span
+          >
+        </h1>
+        <p>
+          A comfortable place to enjoy <span>the sunset</span>
+        </p>
+      </main>
+    </section>
+
+    <!-- Hero Section end-->
+
+    <!-- About Section start-->
+    <section id="about" class="about">
+      <h2><span>About</span> US</h2>
+
+      <div class="row">
+        <div class="about-img">
+          <img src="img/foto 4orang baru.jpg" alt="About US">
+        </div>
+        <div class="content">
+          <h3>WHY?</h3>
+          <p>Because, Spend your time here together and invite your bestie to come here.</p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- About Section end-->
+
+    <!-- Menu Section start-->
+    <section id="menu" class="menu">
+      <h2><span> Menu </span> US </h2>
+      <p>Signature Menu</p>
+
+
+      <div class="row">
+        <div class="menu-card">
+          <img src="img/Banana Latte abu.png" alt="Banana Latte" class="menu-card-img">
+          <h3 class="menu-card-tittle"> Banana Latte </h3>
+          <p class="menu-card-price">IDR 25K</p>
+        </div>
+        <div class="menu-card">
+          <img src="img/Red Velvet Latte abu.png" alt="Red Velvet Latte" class="menu-card-img">
+          <h3 class="menu-card-tittle"> Red Velvet Latte </h3>
+          <p class="menu-card-price">IDR 25K</p>
+        </div>
+        <div class="menu-card">
+          <img src="img/matcha latte abu (1).png" alt="Matcha Latte" class="menu-card-img">
+          <h3 class="menu-card-tittle"> Matcha Latte </h3>
+          <p class="menu-card-price">IDR 25K</p>
+        </div>
+        <div class="menu-card">
+          <img src="img/Black Rock abu (1).png" alt="Black Rock" class="menu-card-img">
+          <h3 class="menu-card-tittle"> Black Rock </h3>
+          <p class="menu-card-price">IDR 28K</p>
+        </div>
+        <div class="menu-card">
+          <img src="img/Lemon Squash abu.png" alt="Lemon Squash" class="menu-card-img">
+          <h3 class="menu-card-tittle"> Lemon Squash </h3>
+          <p class="menu-card-price">IDR 28K</p>
+        </div>
+        <div class="menu-card">
+          <img src="img/Lemon Tea abu.png" alt="Lemon Tea" class="menu-card-img">
+          <h3 class="menu-card-tittle"> Lemon Tea </h3>
+          <p class="menu-card-price">IDR 23K</p>
+        </div>
+        <div class="menu-card">
+          <img src="img/lychee tea abu (1).png" alt="Lychee Tea" class="menu-card-img">
+          <h3 class="menu-card-tittle"> Lychee Tea </h3>
+          <p class="menu-card-price">IDR 23K</p>
+        </div>
+        <div class="menu-card">
+          <img src="img/Kopi Susu abu.png" alt="Kopi Susu Gandaria" class="menu-card-img">
+          <h3 class="menu-card-tittle"> Kopi Susu Gandaria </h3>
+          <p class="menu-card-price">IDR 25K</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section start-->
+    <section id="gallery" class="gallery">
+      <h2><span>Moment</span> Kami </h2>
+      <p>Keluar dari hiruk pikuk kota dan bersantai dengan secangkir kopi hangat menikmati City Light,
+      Suasana yang nyaman dan lampu kota yang berkelap-kelip menciptakan suasana yang sempurna untuk momen refleksi yang damai atau berkumpul dengan teman.
+</p>
+      <div class="row">
+       <video controls="true" width="500px;">
+        <source src="img/video.mp4" type="video/webm">
+       </video>
+       <video controls="true" width="500px;">
+        <source src="img/video 2.mp4" type="video/webm">
+       </video>
+       <video controls="true" width="500px;">
+        <source src="img/video 3.mp4" type="video/webm">
+       </video>
+       <video controls="true" width="500px;">
+        <source src="img/video 4.mp4" type="video/webm">
+       </video>
+      </div>
+      
+    
+    </section>
+    <!-- Gallery Section end-->
+
+    
+    <!-- Contact Section start-->
+    <section id="contact" class="contact">
+      <h2><span>Contact</span> US</h2>
+      <p>Ada pertanyaan atau komentar? Tulis saja pesan untuk kami!</p>
+
+
+      <div class="row">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.175213732451!2d106.7831047!3d-6.2406242999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f1c282b5870f%3A0xda3e987239e5a2a2!2sBAROKAH%20COFFEE!5e0!3m2!1sid!2sid!4v1699723918059!5m2!1sid!2sid" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
+
+        <form>
+          <div class="input-group">
+            <i data-feather="user"></i>
+            <input type="text"
+            placeholder="nama">
+          </div>
+          <div class="input-group">
+            <i data-feather="mail"></i>
+            <input type="text"
+            placeholder="email">
+          </div>
+          <div class="input-group">
+            <i data-feather="phone"></i>
+            <input type="text"
+            placeholder="no hp">
+          </div>
+          <div class="btn">
+            <button onclick="myFunction()">Kirim Pesan</button>
+            </div>
+            </form>
+            <p id="demo"></p>
+      </div>
+    </section>
+    <!-- Contact Section end-->
+
+    <!-- Footer Start-->
+    <footer>
+      <div class="social">
+        <a href="https://www.instagram.com/barokahcoffee.id/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://api.whatsapp.com/message/SGDKXHIS4V36F1?autoload=1&app_absent=0" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://www.tiktok.com/@barokahcoffee" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+      </div>
+
+      <div class="credit"></div>
+      <p><i class="fa-solid fa-location-dot"></i> Rooftop Di Area Gandaria</p>
+      <br>
+      <a href="https://linktr.ee/barokahcoffee">Tap the link for information</a>
+      <br>
+      <br>
+      <p>Created by <a href=""></a>Muthmainnatul Qolbi</a>. | &copy; 2023.</p>
+    </footer>
+    <!-- Footer end--> 
+
+    <script>
+
+// Toggle class active untuk search form
+const searchForm = document.querySelector(".search-form");
+const searchBox = document.querySelector("#search-box");
+
+document.querySelector("#search-button").onclick = (e) => {
+  searchForm.classList.toggle("active");
+  searchBox.focus();
+  e.preventDefault();
+};
+
+// Klik di luar elemen
+const search = document.querySelector('#search-button');
+
+document.addEventListener("click", function (e) {
+  if (!search.contains(e.target) && !searchForm.contains(e.target)) {
+    searchForm.classList.remove("active");
+  }
+});
+
+function myFunction() {
+  var txt;
+  if (confirm("Pesan Terkirim!"))
+document.getElementById("demo").innerHTML = txt;
+}
+
+
+    </script>
+
+    <!--Feather Icons-->
+    <script>
+      feather.replace();
+    </script>
+
+    <!--My Javascript-->
+    <script src="script.js"></script>
+  </body>
+</html>
